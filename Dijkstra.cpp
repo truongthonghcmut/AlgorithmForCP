@@ -37,19 +37,19 @@ void dijkstra(ll source) {
 int main() {
     // Dijkstra's Algorithm: find the minimum path weight from one vertex to all other vertices
     // For each edge u, v, w: there is one-way direction from u to v with weight w;  --  adj[u].push_back({v, w})
-    adj[1].push_back(make_pair(2, 4));
-    adj[1].push_back(make_pair(3, 2));
-    adj[1].push_back(make_pair(4, 9));
-    adj[2].push_back(make_pair(3, 3));
-    adj[2].push_back(make_pair(7, 8));
-    adj[3].push_back(make_pair(5, 7));
-    adj[4].push_back(make_pair(6, 1));
-    adj[5].push_back(make_pair(6, 1));
-    adj[5].push_back(make_pair(8, 3));
-    adj[6].push_back(make_pair(9, 6));
-    adj[7].push_back(make_pair(10, 6));
-    adj[8].push_back(make_pair(10, 8));
-    adj[9].push_back(make_pair(10, 2));
+    adj[1].push_back({2, 4});
+    adj[1].push_back({3, 2});
+    adj[1].push_back({4, 9});
+    adj[2].push_back({3, 3});
+    adj[2].push_back({7, 8});
+    adj[3].push_back({5, 7});
+    adj[4].push_back({6, 1});
+    adj[5].push_back({6, 1});
+    adj[5].push_back({8, 3});
+    adj[6].push_back({9, 6});
+    adj[7].push_back({10, 6});
+    adj[8].push_back({10, 8});
+    adj[9].push_back({10, 2});
 
     dijkstra(1);
 
