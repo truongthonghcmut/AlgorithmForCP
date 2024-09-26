@@ -10,7 +10,7 @@ const ll mxN = 1e5;
 #define vll vector<ll>
 #define mll map<ll, ll>
 #define sll set<ll>
-// Suffix Tree (Trie)
+// Prefix Tree (Trie)
 struct TrieNode {
     TrieNode* next[26] = {};
     int cnt = 0; // how many strings have suffix are represented by this vertex
@@ -19,7 +19,7 @@ struct TrieNode {
 
 TrieNode* root = new TrieNode();
 
-// Insert a word in suffix tree
+// Insert a word in prefix tree
 void insert(string word) {
     TrieNode* node = root;
     for(char ch: word) {
