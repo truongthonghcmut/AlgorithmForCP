@@ -40,6 +40,16 @@ bool find(string target) {
     return node->exist > 0;
 }
 
+// Find if exist a string which is started by a prefix
+bool start_with(string prefix) {
+    TrieNode* node = root;
+    for(char ch: prefix) {
+        if(!node->next[ch - 'a']) return false;
+        node = node->next[ch - 'a'];
+    }
+    return true;
+}
+
 void dfs(TrieNode* root, string& curr, vector<string>& sort_str) {
     if(root == nullptr) return;
     for(int i = 1; i <= root->exist; i++) {
@@ -61,7 +71,12 @@ int main() {
 
     cout << find("bccaa") << "\n";
     cout << find("bccaab") << "\n";
-    
+
+    cout << start_with("bccaa") << "\n";
+    cout << start_with("cacaa") << "\n";
+    cout << start_with("ca") << "\n";
+    cout << start_with("cc") << "\n";
+
     // Sort the strings in directionary order
     vector<string> sort_str;
     string curr = "";
